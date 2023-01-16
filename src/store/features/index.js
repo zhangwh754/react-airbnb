@@ -1,4 +1,4 @@
-import homeReducer, { countAdd } from './home'
+import homeReducer, { fetchHomeDataAction } from './home'
 import detailReducer, { getAge } from './detail'
 
-export { homeReducer, countAdd, detailReducer, getAge }
+export { homeReducer, fetchHomeDataAction, detailReducer, getAge }
