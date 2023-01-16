@@ -5,3 +5,9 @@ export const getHomeGoodPriceData = () => {
     url: '/home/goodprice'
   })
 }
+
+export const getHomeHighScoreData = () => {
+  return request.get({
+    url: '/home/highscore'
+  })
+}
