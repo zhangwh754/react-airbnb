@@ -1,8 +1,12 @@
+import SwitchRoute from '@/components/SwitchRoute'
 import React, { memo } from 'react'
 
 const List = memo(() => {
   return (
-    <div>List</div>
+    <>
+      <h2>List</h2>
+      <SwitchRoute />
+    </>
   )
 })
 

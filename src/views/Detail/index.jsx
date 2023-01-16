@@ -1,19 +1,12 @@
 import React, { memo } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 
-import { getAge } from '@/store/features'
+import SwitchRoute from '@/components/SwitchRoute'
 
 const Detail = memo(() => {
-  const { age } = useSelector(state => ({
-    age: state.detail.age
-  }))
-
-  const dispatch = useDispatch()
-
   return (
     <>
-      <h2>{age}</h2>
-      <button onClick={() => dispatch(getAge())}>countSub</button>
+      <h2>detail</h2>
+      <SwitchRoute />
     </>
   )
 })
