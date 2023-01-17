@@ -5,12 +5,12 @@ import SectionItem from '../SectionItem'
 import { ListWrapper } from './style'
 
 const SectionList = memo(props => {
-  const { list = [] } = props
+  const { list = [], itemWidth } = props
 
   return (
     <ListWrapper>
       {list.slice(0, 8).map(item => (
-        <SectionItem key={item.id} {...item} />
+        <SectionItem {...item} key={item.id} itemWidth={itemWidth} />
       ))}
     </ListWrapper>
   )

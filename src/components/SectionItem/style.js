@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ItemWrapper = styled.li`
   box-sizing: border-box;
-  width: 25%;
+  width: ${props => props.itemWidth};
   padding: 12px 8px;
   > div {
     line-height: 1.5em;
@@ -14,12 +14,7 @@ export const ItemWrapper = styled.li`
     padding: 66.6% 8px 0;
     border-radius: 3px;
     overflow: hidden;
-    transition: all 0.5s ease;
     cursor: pointer;
-
-    &:hover {
-      ${props => props.theme.mixin.shadow};
-    }
 
     img {
       position: absolute;

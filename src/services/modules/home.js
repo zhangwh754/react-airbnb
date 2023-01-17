@@ -11,3 +11,15 @@ export const getHomeHighScoreData = () => {
     url: '/home/highscore'
   })
 }
+
+export const getHomeDiscountData = () => {
+  return request.get({
+    url: '/home/discount'
+  })
+}
+
+export const getHomeHotRecommendData = () => {
+  return request.get({
+    url: '/home/hotrecommenddest'
+  })
+}

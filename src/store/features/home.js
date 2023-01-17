@@ -1,13 +1,24 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import { getHomeGoodPriceData, getHomeHighScoreData } from '@/services/modules/home'
+import {
+  getHomeDiscountData,
+  getHomeGoodPriceData,
+  getHomeHighScoreData,
+  getHomeHotRecommendData
+} from '@/services/modules/home'
 
 export const fetchHomeDataAction = createAsyncThunk('fetchGoodPriceInfo', (payload, { dispatch }) => {
   getHomeGoodPriceData().then(res => {
-    dispatch(homeReducer.actions.changeGoodPriceInfoAction(res))
+    dispatch(changeGoodPriceInfoAction(res))
   })
   getHomeHighScoreData().then(res => {
-    dispatch(homeReducer.actions.changeHighScoreInfoAction(res))
+    dispatch(changeHighScoreInfoAction(res))
+  })
+  getHomeDiscountData().then(res => {
+    dispatch(changeDiscountInfoAction(res))
+  })
+  getHomeHotRecommendData().then(res => {
+    dispatch(changeHotRecommendInfo(res))
   })
 })
 
@@ -15,7 +26,9 @@ const homeReducer = createSlice({
   name: 'home',
   initialState: {
     goodPriceInfo: {},
-    highScoreInfo: {}
+    highScoreInfo: {},
+    discountInfo: {},
+    hotRecommendInfo: {}
   },
   reducers: {
     changeGoodPriceInfoAction(state, { payload }) {
@@ -23,6 +36,12 @@ const homeReducer = createSlice({
     },
     changeHighScoreInfoAction(state, { payload }) {
       state.highScoreInfo = payload
+    },
+    changeDiscountInfoAction(state, { payload }) {
+      state.discountInfo = payload
+    },
+    changeHotRecommendInfo(state, { payload }) {
+      state.hotRecommendInfo = payload
     }
   }
   // extraReducers: builder => {
@@ -32,6 +51,7 @@ const homeReducer = createSlice({
   // }
 })
 
-// export const {} = homeReducer.actions
+const { changeGoodPriceInfoAction, changeHighScoreInfoAction, changeDiscountInfoAction, changeHotRecommendInfo } =
+  homeReducer.actions
 
 export default homeReducer.reducer

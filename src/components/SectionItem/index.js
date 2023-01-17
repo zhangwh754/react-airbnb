@@ -4,8 +4,15 @@ import { Rating } from '@mui/material'
 import { ItemWrapper } from './style'
 
 const SectionItem = memo(props => {
+  const { itemWidth = '25%' } = props
+
   return (
-    <ItemWrapper key={props.id} descColor={props.verify_info?.text_color} bottomContent={props?.bottom_info}>
+    <ItemWrapper
+      key={props.id}
+      descColor={props.verify_info?.text_color}
+      bottomContent={props?.bottom_info}
+      itemWidth={itemWidth}
+    >
       <div className="cover">
         <img src={props.picture_url} alt="房间图片" />
       </div>
@@ -23,7 +30,7 @@ const SectionItem = memo(props => {
               readOnly
             />
             <span>{props.reviews_count}</span>
-            <span className='bottom'>{props?.bottom_info?.content && `·${props.bottom_info.content}`}</span>
+            <span className="bottom">{props?.bottom_info?.content && `·${props.bottom_info.content}`}</span>
           </>
         ) : (
           <span className="new">new</span>

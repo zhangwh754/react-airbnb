@@ -4,7 +4,6 @@ import { FooterWrapper } from './style'
 import data from '@/assets/data/footer.json'
 
 const AppFooter = memo(() => {
-  console.log(data)
 
   return (
     <FooterWrapper className="content">
