@@ -4,7 +4,9 @@ import {
   getHomeDiscountData,
   getHomeGoodPriceData,
   getHomeHighScoreData,
-  getHomeHotRecommendData
+  getHomeHotRecommendData,
+  getHomeLongforData,
+  getHomePlusData
 } from '@/services/modules/home'
 
 export const fetchHomeDataAction = createAsyncThunk('fetchGoodPriceInfo', (payload, { dispatch }) => {
@@ -18,7 +20,13 @@ export const fetchHomeDataAction = createAsyncThunk('fetchGoodPriceInfo', (paylo
     dispatch(changeDiscountInfoAction(res))
   })
   getHomeHotRecommendData().then(res => {
-    dispatch(changeHotRecommendInfo(res))
+    dispatch(changeHotRecommendInfoAction(res))
+  })
+  getHomeLongforData().then(res => {
+    dispatch(changeLongForInfoAction(res))
+  })
+  getHomePlusData().then(res => {
+    dispatch(changePlusInfoAction(res))
   })
 })
 
@@ -28,7 +36,9 @@ const homeReducer = createSlice({
     goodPriceInfo: {},
     highScoreInfo: {},
     discountInfo: {},
-    hotRecommendInfo: {}
+    hotRecommendInfo: {},
+    longForInfo: {},
+    plusInfo: {}
   },
   reducers: {
     changeGoodPriceInfoAction(state, { payload }) {
@@ -40,8 +50,14 @@ const homeReducer = createSlice({
     changeDiscountInfoAction(state, { payload }) {
       state.discountInfo = payload
     },
-    changeHotRecommendInfo(state, { payload }) {
+    changeHotRecommendInfoAction(state, { payload }) {
       state.hotRecommendInfo = payload
+    },
+    changeLongForInfoAction(state, { payload }) {
+      state.longForInfo = payload
+    },
+    changePlusInfoAction(state, { payload }) {
+      state.plusInfo = payload
     }
   }
   // extraReducers: builder => {
@@ -51,7 +67,13 @@ const homeReducer = createSlice({
   // }
 })
 
-const { changeGoodPriceInfoAction, changeHighScoreInfoAction, changeDiscountInfoAction, changeHotRecommendInfo } =
-  homeReducer.actions
+const {
+  changeGoodPriceInfoAction,
+  changeHighScoreInfoAction,
+  changeDiscountInfoAction,
+  changeHotRecommendInfoAction,
+  changeLongForInfoAction,
+  changePlusInfoAction
+} = homeReducer.actions
 
 export default homeReducer.reducer

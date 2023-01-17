@@ -16,16 +16,19 @@ export const FooterWrapper = styled.footer`
     }
 
     dd {
-      color: #767676;
-      font-weight: 600;
-      padding: 2px 0;
-
+      a {
+        display: inline-block;
+        color: #767676;
+        font-weight: 600;
+        padding: 2px 0;
+      }
       &:last-child::after {
         position: relative;
         right: -5px;
         content: '新推出';
         font-size: 12px;
         color: #fff;
+        font-weight: 600;
         background-color: ${props => props.theme.color.second};
         padding: 2px 5px;
         border-radius: 4px;

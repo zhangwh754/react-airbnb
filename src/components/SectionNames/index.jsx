@@ -1,3 +1,4 @@
+import ScrollView from '@/ui/ScrollView'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { memo, useState } from 'react'
@@ -16,15 +17,17 @@ const SectionNames = memo(props => {
 
   return (
     <NamesWrapper>
-      {namesArr.map((item, index) => (
-        <div
-          key={item}
-          className={classNames('name', { active: activeIndex === index })}
-          onClick={() => handleNameClick(index, item)}
-        >
-          {item}
-        </div>
-      ))}
+      <ScrollView>
+        {namesArr.map((item, index) => (
+          <div
+            key={item}
+            className={classNames('name', { active: activeIndex === index })}
+            onClick={() => handleNameClick(index, item)}
+          >
+            {item}
+          </div>
+        ))}
+      </ScrollView>
     </NamesWrapper>
   )
 })
