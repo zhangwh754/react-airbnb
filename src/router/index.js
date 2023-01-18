@@ -8,7 +8,7 @@ const Detail = React.lazy(() => import('../views/Detail'))
 const config = [
   {
     path: '/',
-    element: <Navigate to="/home" />
+    element: <Navigate to="/list" />
   },
   {
     path: '/home',

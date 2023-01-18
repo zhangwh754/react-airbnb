@@ -9,7 +9,7 @@ const App = memo(() => {
     <div className="app">
       <AppHeader />
       <Suspense fallback={<div>Loading...</div>}>
-        <main style={{ minHeight: '600px' }}>{useRoutes(config)}</main>
+        <main>{useRoutes(config)}</main>
       </Suspense>
 
       <AppFooter />
