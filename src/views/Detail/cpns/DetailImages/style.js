@@ -50,7 +50,7 @@ export const ViewWrapper = styled.div`
         bottom: 0;
         background-color: rgba(0, 0, 0, 0.3);
         opacity: 0;
-        transition: opacity .2s ease;
+        transition: opacity 0.2s ease;
       }
     }
 
@@ -74,5 +74,16 @@ export const ViewWrapper = styled.div`
         height: 50%;
       }
     }
+  }
+
+  .btn {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
   }
 `
