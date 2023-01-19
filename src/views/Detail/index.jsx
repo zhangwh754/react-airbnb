@@ -1,13 +1,24 @@
 import React, { memo } from 'react'
+import { useSelector } from 'react-redux'
 
-import SwitchRoute from '@/components/SwitchRoute'
+import { DetailWrapper } from './style'
+import ImageView from '@/views/Detail/cpns/DetailImages'
 
 const Detail = memo(() => {
+  const { itemInfo } = useSelector(state => ({
+    itemInfo: state.detail.itemInfo
+  }))
+
+  console.log(itemInfo.picture_urls.slice(0, 5))
+
   return (
-    <>
-      <h2>detail</h2>
-      <SwitchRoute />
-    </>
+    <DetailWrapper>
+      <ImageView>
+        {itemInfo.picture_urls.slice(0, 5).map((item, index) => (
+          <img key={index} src={item} alt="房间图片" />
+        ))}
+      </ImageView>
+    </DetailWrapper>
   )
 })
 

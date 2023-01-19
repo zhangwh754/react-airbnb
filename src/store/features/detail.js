@@ -3,15 +3,15 @@ import { createSlice } from '@reduxjs/toolkit'
 const detailReducer = createSlice({
   name: 'detail',
   initialState: {
-    age: 18
+    itemInfo: {}
   },
   reducers: {
-    getAge(state, { payload }) {
-      console.log(state.age)
+    setItemInfoAction(state, { payload }) {
+      state.itemInfo = payload
     }
   }
 })
 
-export const { getAge } = detailReducer.actions
+export const { setItemInfoAction } = detailReducer.actions
 
 export default detailReducer.reducer
