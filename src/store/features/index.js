@@ -1,4 +1,4 @@
 import homeReducer, { fetchHomeDataAction } from './home'
-import detailReducer, { getAge } from './detail'
+import detailReducer, { setItemInfoAction } from './detail'
 
-export { homeReducer, fetchHomeDataAction, detailReducer, getAge }
+export { homeReducer, fetchHomeDataAction, detailReducer, setItemInfoAction }

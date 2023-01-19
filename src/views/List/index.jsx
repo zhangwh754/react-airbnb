@@ -5,6 +5,7 @@ import ListFilter from './cpns/ListFilter'
 import ListPagination from './cpns/ListPagination'
 import ListRooms from './cpns/ListRooms'
 import { fetchEntireRoomList } from '@/store/features/List/actionCreators'
+import { isEmptyObject } from '@/utils'
 
 const List = memo(() => {
   const { totalPage, listData, currentPage, isLoading } = useSelector(state => ({
@@ -22,9 +23,13 @@ const List = memo(() => {
 
   return (
     <div>
-      <ListFilter />
-      <ListRooms listData={listData} />
-      <ListPagination totalPage={totalPage} currentPage={currentPage} isLoading={isLoading} />
+      {isEmptyObject(listData) && (
+        <>
+          <ListFilter />
+          <ListRooms listData={listData} />
+          <ListPagination totalPage={totalPage} currentPage={currentPage} isLoading={isLoading} />
+        </>
+      )}
     </div>
   )
 })

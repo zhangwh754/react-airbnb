@@ -1,7 +1,9 @@
 import React, { memo } from 'react'
 import css2obj from './utils/css2obj'
 
-const IconLast = memo(() => {
+const IconLast = memo(props => {
+  const { width = 12, height = 12 } = props
+
   return (
     <svg
       viewBox="0 0 32 32"
@@ -10,7 +12,7 @@ const IconLast = memo(() => {
       role="img"
       focusable="false"
       style={css2obj(
-        'display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; strokeWidth: 4; overflow: visible;'
+        `display: block; fill: none; height: ${height}px; width: ${width}px; stroke: currentcolor; strokeWidth: 4; overflow: visible;`
       )}
     >
       <g fill="none">

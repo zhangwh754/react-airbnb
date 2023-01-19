@@ -29,8 +29,6 @@ const ScrollView = memo(props => {
 
     contentRef.current.style.transform = `translateX(-${offsetLeft}px)`
 
-    console.log(offsetLeft, totalDistance.current)
-
     setIndex(currentIndex)
     setIsShowRight(offsetLeft < totalDistance.current)
     setIsShowLeft(offsetLeft > 0)
